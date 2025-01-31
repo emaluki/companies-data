@@ -86,5 +86,3 @@ This project is **MIT licensed**. Feel free to modify and improve it!
 
 ---
 🚀 Happy Scraping!
-
-# companies-data
