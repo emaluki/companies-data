@@ -1,21 +1,32 @@
-# Web Scraper for Company Data (Selenium + BeautifulSoup + MySQL)
+# Web Scraper & User Interface for Company Data (Selenium + BeautifulSoup + Django + MySQL)
 
 ## Overview
-This project is a web scraper that extracts company details such as **name, location, phone number, and website URL** from [GelbeSeiten](https://www.gelbeseiten.de). The extracted data is then stored in a **MySQL database**.
+This project involves extracting business data from [GelbeSeiten](https://www.gelbeseiten.de/suche/geb%c3%a4udereinigung/bundesweit) to collect information on **2,000 cleaning companies across Germany**. The extracted data is stored in a **MySQL database** and can be accessed through a **Django-based web interface**.
+
+## Data to be Collected
+- **Company Name**
+- **Location** (Address, City, Zip Code)
+- **Phone Number**
+- **Website URL** (if available)
 
 ## Features
 ✅ **Automated Web Scraping** using **Selenium** and **BeautifulSoup**
 ✅ **Headless Mode** for faster and background execution
 ✅ **MySQL Integration** to store extracted data
+✅ **Django Web Interface** for viewing and managing company data
+✅ **Django REST Framework API** for accessing data via endpoints
+✅ **Bootstrap Styling** for a responsive UI
 ✅ **Error Handling** for missing elements and database failures
-✅ **Efficient Scrolling** to load more data dynamically
+✅ **Pagination Handling** to navigate all pages and collect complete data
+✅ **Duplicate Removal** to ensure data accuracy
+✅ **Bypass Anti-Scraping Mechanisms** if necessary
 
 ## Prerequisites
-Before running the script, ensure you have the following installed:
+Before running the script and UI, ensure you have the following installed:
 
 ### 1. Install Python Packages
 ```sh
-pip install selenium beautifulsoup4 mysql-connector-python
+pip install selenium beautifulsoup4 mysql-connector-python django djangorestframework
 ```
 
 ### 2. Download WebDriver
@@ -50,39 +61,58 @@ db = mysql.connector.connect(
 )
 ```
 
-## Running the Script
+## Running the Scraper
 To start the scraper, run:
 ```sh
 python scraper.py
 ```
+
+## Running the Django Web Interface
+### 1. Navigate to the Django Project Directory
+```sh
+cd your_django_project
+```
+
+### 2. Apply Migrations and Start the Server
+```sh
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+```
+
+### 3. Access the Web Interface
+Open a browser and visit:
+```
+http://127.0.0.1:8000/
+```
+
+## API Endpoints (Django REST Framework)
+The Django backend exposes RESTful endpoints:
+- List all companies: `GET /api/companies/`
+- Retrieve a specific company: `GET /api/companies/{id}/`
 
 ## Expected Output
 The script will:
 1. Open the website in **headless Chrome**
 2. Accept cookies if required
 3. Scroll and **click 'Load More'** to extract more data
-4. Parse and store company details in **MySQL**
-5. Print extracted details in the console
+4. Navigate through **all pagination pages**
+5. Parse and store company details in **MySQL**
+6. Display the data in a **Django web interface**
+7. Provide API access via Django REST Framework
 
-Example output:
-```sh
---- Company 1 Details ---
-Name: ABC Cleaning Services
-Location: 123 Main St, Berlin
-Phone: +49123456789
-Website URL: https://abc-cleaning.de
-
-Number of companies found: 40
-Script execution completed.
-```
 
 ## Troubleshooting
 - **Chromedriver Version Mismatch**: Ensure your **ChromeDriver version matches your browser version**.
 - **MySQL Connection Error**: Verify your **username, password, and database name**.
 - **Website Changes**: If the website structure changes, update the **CSS selectors** accordingly.
+- **Django Returns No Data**: Ensure the correct **table name** is set in `models.py`.
 
-## License
-This project is **MIT licensed**. Feel free to modify and improve it!
+## Ideal Candidate for This Project
+- **Proficient in Python** (Scrapy, BeautifulSoup, Selenium, or Requests)
+- **Experience with Web Automation** and **bypassing bot protections**
+- **Strong knowledge of Data Cleaning and Structuring**
 
 ---
-🚀 Happy Scraping!
+🚀 Happy Scraping & Web Development!
+
