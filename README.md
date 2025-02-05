@@ -91,7 +91,6 @@ The Django backend exposes RESTful endpoints:
 - List all companies: `GET /api/companies/`
 - Retrieve a specific company: `GET /api/companies/{id}/`
 
-## Expected Output
 The script will:
 1. Open the website in **headless Chrome**
 2. Accept cookies if required
