@@ -116,7 +116,7 @@ The script will:
 - **Website Changes**: If the website structure changes, update the **CSS selectors** accordingly.
 - **Django Returns No Data**: Ensure the correct **table name** is set in `models.py`.
 
-## Ideal Candidate for This Project
+## Skills Demonstrated 
 - **Proficient in Python** (Scrapy, BeautifulSoup, Selenium, or Requests)
 - **Experience with Web Automation** and **bypassing bot protections**
 - **Strong knowledge of Data Cleaning and Structuring**
