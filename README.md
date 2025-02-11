@@ -11,14 +11,23 @@ This project involves extracting business data from [GelbeSeiten](https://www.ge
 
 ## Features
 ✅ **Automated Web Scraping** using **Selenium** and **BeautifulSoup**
+
 ✅ **Headless Mode** for faster and background execution
+
 ✅ **MySQL Integration** to store extracted data
+
 ✅ **Django Web Interface** for viewing and managing company data
+
 ✅ **Django REST Framework API** for accessing data via endpoints
+
 ✅ **Bootstrap Styling** for a responsive UI
+
 ✅ **Error Handling** for missing elements and database failures
+
 ✅ **Pagination Handling** to navigate all pages and collect complete data
+
 ✅ **Duplicate Removal** to ensure data accuracy
+
 ✅ **Bypass Anti-Scraping Mechanisms** if necessary
 
 ## Prerequisites
